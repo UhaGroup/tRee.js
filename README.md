@@ -27,13 +27,13 @@ like :
   <script type="text/javascript" src="tRee-min.js"></script>
 ```
 
+
 ## Quick Start
 
 ```js
 // empty tree
 let tree_obj;
-let treeView = new tRee();
-treeView.show( (id,path,change) => {
+new tRee().show( (id,path,change) => {
  // id : string
  // path : string
  // change : bool
@@ -46,12 +46,14 @@ treeView.show( (id,path,change) => {
 });
 ```
 
+
 ## on change listener
 ```js
 treeView.onChange( tree => {
   tree_obj = tree;
 })
 ```
+
 ## options
 
 ```js
@@ -60,29 +62,30 @@ let tree_obj;
 let treeView = new tRee();
 let options = treeView.options();
    
-   log : {
+   log : 
+       options = {
             id : 'tRee-container', // id of root element
-            titleText : "choose target folder...", // title of dialog
+            titleText : "choose target branch...", // title of dialog
             className : "tRee", // css class name
             doneText : 'done',
-            newFolderText : "new folder",
+            newFolderText : "new branch",
             cancelText : "cancel",
-            error1 : "first choose target folder!",
-            error2 : "you can't create this folder!",
-            error3 : "this folder not exist!",
+            error1 : "first choose target branch!",
+            error2 : "you can't create this branch!",
+            error3 : "branch not exist!",
             error4 : 'id not found!',
-            prompTitle : "enter name folder ...",
-            prompRenameTitle : "new name ...",
+            prompTitle : "enter title ...",
+            prompRenameTitle : "new title ...",
             libNameHide : false, // if you want hide title (tRee.js) = true | show = false  
         }
-        
-  // for change
-  
+
+  // change
   options.titleText = 'some thing else...';
   options.doneText : 'add';
   options.newFolderText : "new branch";
   treeView.options(options);
 ```
+
 
 ## Everything in tRee.js
 ```js
@@ -102,7 +105,7 @@ treeView.newBranch(parentId:string,name:string); // @return tRee;
 treeView.delete(id:string); // @return object;
 
 // rename
-treeView.rename(id:string,newName:string); // @return tRee;
+treeView.rename(id:string,newTitle:string); // @return tRee;
 
 // custom style
 treeView.customStyle(className:string); // @return tRee;
@@ -130,5 +133,78 @@ treeView.destroy(); // @return tRee;
 
 // for custom style as css minified text
 treeView.css = 'css minified text';
+```
 
+
+## tRee object
+```js
+    let default_tree = [{title: "root", id : '#root', children: []}];
+    
+    let some_tree = [{ title : "root", id : '#root',
+            children : [
+                {
+                    title : "Branch 1",
+                    id : 'someId' ,
+                    children : []
+                },
+                {
+                    title : "Branch 2",
+                    id : 'someId2' ,
+                    children : []
+                },
+                {
+                    title : "Branch 3",
+                    id : 'someId3' ,
+                    children : [
+                        {
+                            title : "Branch 3 sub",
+                            id : 'someId3 sub1' ,
+                            children : []
+                        },
+
+                    ]
+                },
+            ]
+        }];
+        
+    let treeView = new tRee(some_tree);
+```
+
+
+## HTML Element (tRee foundation)
+```html
+<!--tRee alpha background--> 
+<div id="tReeAlphaBG">
+    <a href="https://github.com/UhaGroup/tRee.js">tRee.js</a>
+</div>
+
+<!--tRee dialog--> 
+<div id="tRee-container" class="tRee">
+    <div class="tRee-caption">
+        <p>choose target branch...</p>
+    </div>
+    <input readonly="" value="root/" type="text" id="tRee-input-addr">
+    <div class="tReePop">
+        <span id="spanEdit"></span>
+        <span id="spanDelete"></span>
+        <span id="spanSubFolder"></span>
+    </div>
+    <ul>
+        <li>
+            root
+            <ul>
+                <li>
+                    <span class="marker marker-down"></span>
+                    <a>sub</a>
+                    <ul></ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <div class="tRee-footer">
+        <button id="tRee-done">done</button>
+        <button id="tRee-newFolder">new branch</button>
+        <button id="tRee-cancel">cancel</button>
+    </div>
+</div>
 ```
