@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html dir="ltr">
+    <head>
+            <title>tRee.js - treeView example</title>
+            <meta charset="utf-8">
+            <meta http-equiv="Content-Language" content="en" dir="ltr"/>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+            <script type="text/javascript" src="tRee-min.js"></script>
+            <style>
+
+                @font-face {
+                    font-family: IRANSans;
+                    font-style: normal;
+                    font-weight: 500;
+                    src: url('font/IRANSansWeb_Medium.eot');
+                    src: url('font/IRANSansWeb_Medium.eot?#iefix') format('embedded-opentype'),  /* IE6-8 */
+                    url('font/IRANSansWeb_Medium.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
+                    url('font/IRANSansWeb_Medium.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+                    url('font/IRANSansWeb_Medium.ttf') format('truetype');
+                }
+                                
+                * {
+                   font-family: IRANSans; 
+                   font-weight: 500; 
+                   font-size: 12px;   
+                }    
+
+                body {
+                    display: flex;
+                    flex-wrap: wrap;
+                    padding: 20px;
+                    justify-content: center;
+                    align-items: center;
+                    align-content: center;
+                }
+
+                div {
+                    width: 100%;
+                }    
+
+                img {
+                    width: 40%;
+                    border-radius: 20px;
+                    margin: auto;
+                    display: flex;
+                    margin: auto;
+                } 
+
+
+                body > button {
+                    width: 130px;
+                    box-shadow: 0 2px 6px #4e68ffa8;
+                    padding: 12px 15px;
+                    border-radius: 100px;
+                    background: linear-gradient(to right, #4E68FF, #4E68FF);
+                    cursor: pointer;
+                    transition: background 2s ease-in-out;
+                    color: #fff;
+                    user-select: none;
+                    font-weight: 600;
+                    margin-top: 20px;
+                }   
+
+                body > button:hover {
+                    background: linear-gradient(to right, #0F31F4, #5B73FB);
+                    box-shadow: -2px 2px 6px #0F31F4;
+                }
+
+        
+            </style>
+    </head>   
+
+    <body>
+            <!-- <img src="banner.png" alt="tRee">
+            <button type="button" id="tree">example</button>   -->
+            
+            <script>
+                    var div = document.createElement('div');
+
+                    var banner = document.createElement('img');
+                    banner.src = "banner.png";
+                    banner.alt = 'tRee';
+
+                    div.appendChild(banner);
+
+                    var button = document.createElement('button');
+                    button.type = "button";
+                    button.id = 'tree';
+                    button.innerText = 'example';
+
+                    document.querySelector('body').appendChild(div);
+                    document.querySelector('body').appendChild(button);
+
+                    document.getElementById('tree').addEventListener("click" , function () {
+
+                        let tree = new tRee();    
+
+                        tree.show( function (id,path,change) {
+                    
+                            alert(id); 
+                            alert(path);    
+                            console.log(change);     
+
+                        })
+
+                    });
+
+
+            </script>
+
+    </body>  
+
+</html>
