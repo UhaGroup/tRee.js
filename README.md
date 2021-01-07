@@ -86,7 +86,49 @@ let options = treeView.options();
 
 ## Everything in tRee.js
 ```js
-treeView.onChange( tree => {
-  tree_obj = tree;
-})
+// show dialog (first build tree then show)
+treeView.show( (id,path,change) => {} ); // @return tRee;
+
+// get branch
+treeView.getById(id:string); // @return object;
+
+// check id
+treeView.existId(id:string); // @return bool;
+
+// new branch
+treeView.newBranch(parentId:string,name:string); // @return tRee;
+
+// delete branch
+treeView.delete(id:string); // @return object;
+
+// rename
+treeView.rename(id:string,newName:string); // @return tRee;
+
+// custom style
+treeView.customStyle(className:string); // @return tRee;
+
+// tRee object
+treeView.tree(); // @return tRee object;
+
+// hide/show "tRee.js" on top
+treeView.libNameHide(bool:false); // @return tRee;
+
+// build tRee dialog
+treeView.build(); // @return tRee html element;
+
+// container (most call after .build() or .show() )
+treeView.container(); // @return tRee html element;
+
+// show(unHide) tRee dialog
+treeView.unHide(); // @return tRee;
+
+// hide tRee dialog
+treeView.hide(); // @return tRee;
+
+// delete tRee html element (this function called after close dialog)
+treeView.destroy(); // @return tRee;
+
+// for custom style as css minified text
+treeView.css = 'css minified text';
+
 ```
