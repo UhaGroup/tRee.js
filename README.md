@@ -226,5 +226,24 @@ treeView.css = 'css minified text';
     font-weight: normal;
     font-style: normal;
 }
+
+/*title*/
+div.tRee .tRee-caption > p::before {}
+
+/*root icon*/
+div.tRee > ul > li:nth-child(1)::before {}
+
+/*branch icon*/
+div.tRee ul li > a::before {}
+
+/*del icon*/
+div.tRee .tReePop span:nth-child(2)::before {}
+
+/*rename icon*/
+div.tRee .tReePop span:nth-child(1)::before {}
+
+/*add sub branch icon*/
+div.tRee .tReePop span:nth-child(3)::before {}
+
 ```
-for create custom font-icon use [icomoon](https://icomoon.io).
+create custom font-icon use [icomoon](https://icomoon.io).
