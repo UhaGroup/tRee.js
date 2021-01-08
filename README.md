@@ -1,6 +1,8 @@
 # tRee.js
 Treeview library
 
+![banner](example/banner.png)
+
 ## Usage
 Note that almost all options are default.
 
@@ -187,7 +189,7 @@ treeView.css = 'css minified text';
     <div class="tReePop">
         <span id="spanEdit"></span>
         <span id="spanDelete"></span>
-        <span id="spanSubFolder"></span>
+        <span id="spanSubBranch"></span>
     </div>
     <ul>
         <li>
@@ -203,7 +205,7 @@ treeView.css = 'css minified text';
     </ul>
     <div class="tRee-footer">
         <button id="tRee-done">done</button>
-        <button id="tRee-newFolder">new branch</button>
+        <button id="tRee-newBranch">new branch</button>
         <button id="tRee-cancel">cancel</button>
     </div>
 </div>
