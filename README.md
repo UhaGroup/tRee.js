@@ -96,6 +96,7 @@ treeView.show( (id,path,change) => {} ); // @return tRee;
 
 // get branch
 treeView.getById(id:string); // @return object;
+// treeView.getById(id:string).title
 
 // check id
 treeView.existId(id:string); // @return bool;
