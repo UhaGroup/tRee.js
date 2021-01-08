@@ -210,3 +210,21 @@ treeView.css = 'css minified text';
     </div>
 </div>
 ```
+
+## Icons (tRee-font)
+
+```css
+/*most add font folder in root dir.*/
+
+@font-face {
+    font-family: 'tRee-Font';
+    src: url("tReeFonts/tRee.eot?5kiojs");
+    src: url("tReeFonts/tRee.eot?5kiojs#iefix") format("embedded-opentype"),
+    url("tReeFonts/tRee.ttf?5kiojs") format("truetype"),
+    url("tReeFonts/tRee.woff?5kiojs") format("woff"),
+    url("tReeFonts/tRee.svg?5kiojs#icomoon") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+```
+for create custom font-icon use [icomoon](https://icomoon.io).
