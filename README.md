@@ -1,5 +1,5 @@
 # tRee.js
-Treeview library
+Treeview JS library
 
 ![banner](example/banner.png)
 
