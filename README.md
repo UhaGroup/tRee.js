@@ -215,7 +215,7 @@ treeView.css = 'css minified text';
 ## Icons (tRee-font)
 
 ```css
-/*most add font folder in root dir.*/
+/*most put font folder in root dir.*/
 
 @font-face {
     font-family: 'tRee-Font';
