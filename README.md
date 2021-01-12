@@ -32,7 +32,7 @@ like :
 
 ## Quick Start
 
-```js
+```javascript
 // empty tree
 let tree_obj;
 new tRee().show( (id,path,change) => {
@@ -50,7 +50,7 @@ new tRee().show( (id,path,change) => {
 
 
 ## on change listener
-```js
+```javascript
 treeView.onChange( tree => {
   tree_obj = tree;
 })
@@ -58,7 +58,7 @@ treeView.onChange( tree => {
 
 ## options
 
-```js
+```javascript
 // empty tree
 let tree_obj;
 let treeView = new tRee();
@@ -90,7 +90,7 @@ let options = treeView.options();
 
 
 ## Everything in tRee.js
-```js
+```javascript
 // show dialog (first build tree then show)
 treeView.show( (id,path,change) => {} ); // @return tRee;
 
@@ -140,7 +140,7 @@ treeView.css = 'css minified text';
 
 
 ## tRee object
-```js
+```javascript
     let default_tree = [{title: "root", id : '#root', children: []}];
     
     let some_tree = [{ title : "root", id : '#root',
