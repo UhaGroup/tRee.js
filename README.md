@@ -247,4 +247,4 @@ div.tRee .tReePop span:nth-child(1)::before {}
 div.tRee .tReePop span:nth-child(3)::before {}
 
 ```
-create custom font-icon use [icomoon](https://icomoon.io).
+create custom font-icon --> [icomoon](https://icomoon.io).
